@@ -45,11 +45,11 @@ def plot_roc_and_efficiency_curves(y_test, test_pred, samp_size):
     ax[1].plot(rnd_class, 1/rnd_class, '--', label='Rnd classifier')
     ax[1].set_yscale('log')
 
-    ax[0].set_xlabel('$\epsilon_{bkg}$ - FPR', fontproperties=axislabelfont)
-    ax[0].set_ylabel('$\epsilon_{s}$ - TPR', fontproperties=axislabelfont)
+    ax[0].set_xlabel('ℇ_{bkg} - FPR', fontproperties=axislabelfont)
+    ax[0].set_ylabel('ℇ_{s} - TPR', fontproperties=axislabelfont)
 
-    ax[1].set_xlabel('$\epsilon_{s}$ - TPR', fontproperties=axislabelfont)
-    ax[1].set_ylabel('1/$\epsilon_{bkg}$ - Inverse FPR', fontproperties=axislabelfont)
+    ax[1].set_xlabel('ℇ_{s} - TPR', fontproperties=axislabelfont)
+    ax[1].set_ylabel('1/ℇ_{bkg} - Inverse FPR', fontproperties=axislabelfont)
     for i in range(len(ax)):
         ax[i].legend(prop=axislabelfont)
         ax[i].tick_params(labelsize=axisfontsize)
