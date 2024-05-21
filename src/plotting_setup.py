@@ -13,8 +13,8 @@ labelfont = FontProperties()
 labelfont.set_size(14)
 
 axislabelfont = FontProperties()
-axislabelfont.set_family('serif')
-axislabelfont.set_name('Times New Roman')
+# axislabelfont.set_family('serif')
+# axislabelfont.set_name('Times New Roman')
 axislabelfont.set_size(22)
 
 tickfont = FontProperties()
