@@ -41,15 +41,15 @@ def plot_roc_and_efficiency_curves(y_test, test_pred, samp_size):
 
     ax[0].plot(fpr, tpr, label='AUC = {:.2f}'.format(auc_score) )
     ax[0].plot(rnd_class, rnd_class, '--', label='Rnd classifier')
-    ax[1].plot(tpr, 1/fpr, label='AUC = {:.2f}\n $1/\epsilon_{{bkg}}$(0.3) = {:.0f}'.format(auc_score, 1/fpr[closest_point(tpr, tpr_p=0.3)]))
+    ax[1].plot(tpr, 1/fpr, label='AUC = {:.2f}\n $1/e_{{bkg}}(0.3) = {:.0f}'.format(auc_score, 1/fpr[closest_point(tpr, tpr_p=0.3)]))
     ax[1].plot(rnd_class, 1/rnd_class, '--', label='Rnd classifier')
     ax[1].set_yscale('log')
 
-    ax[0].set_xlabel('ℇ_{bkg} - FPR', fontproperties=axislabelfont)
-    ax[0].set_ylabel('ℇ_{s} - TPR', fontproperties=axislabelfont)
+    ax[0].set_xlabel('e_{bkg} - FPR', fontproperties=axislabelfont)
+    ax[0].set_ylabel('e_{s} - TPR', fontproperties=axislabelfont)
 
-    ax[1].set_xlabel('ℇ_{s} - TPR', fontproperties=axislabelfont)
-    ax[1].set_ylabel('1/ℇ_{bkg} - Inverse FPR', fontproperties=axislabelfont)
+    ax[1].set_xlabel('e_{s} - TPR', fontproperties=axislabelfont)
+    ax[1].set_ylabel('1/e_{bkg} - Inverse FPR', fontproperties=axislabelfont)
     for i in range(len(ax)):
         ax[i].legend(prop=axislabelfont)
         ax[i].tick_params(labelsize=axisfontsize)
